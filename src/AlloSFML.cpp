@@ -12,9 +12,9 @@
 using namespace sf;
 int main()
 {
-    float rayon = 50.0f;
-    float positionX = 100.0f;
-    float positionY = 100.0f;
+    const float rayon = 50.0f;
+    const float positionX = 100.0f;
+    const float positionY = 100.0f;
 
     // https://www.sfml-dev.org/documentation/2.5.0/classsf_1_1CircleShape.php
     CircleShape* visage = new CircleShape(rayon);
@@ -34,11 +34,12 @@ int main()
     bouche->setPosition(15 - rayon + positionX,60 - rayon + positionY);
 
     RenderWindow fenetre(VideoMode(LARGEUR, HAUTEUR), "SFML !");
+    Event evenement;
+
     while (fenetre.isOpen())
     {
         fenetre.clear();
 
-        Event evenement;
         while (fenetre.pollEvent(evenement))
         {
             if (evenement.type == Event::Closed)

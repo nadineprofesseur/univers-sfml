@@ -13,12 +13,10 @@
 using namespace sf;
 int main()
 {
-
-
-
     RenderWindow fenetre(VideoMode(LARGEUR, HAUTEUR), "SFML !");
     Event evenement;
     Binette binette;
+    bool binetteActive = false;
 
     while (fenetre.isOpen())
     {
@@ -28,9 +26,27 @@ int main()
         {
             if (evenement.type == Event::Closed)
                 fenetre.close();
+            if(evenement.type == Event::KeyPressed)
+            {
+            	switch(evenement.key.code)
+            	{
+            		case Keyboard::B:
+            			binetteActive = true;
+            		break;
+            	}
+            }
+            if(evenement.type == Event::KeyReleased)
+            {
+            	switch(evenement.key.code)
+            	{
+            		case Keyboard::B:
+            			binetteActive = false;
+            		break;
+            	}
+            }
         }
 
-        binette.afficher(&fenetre);
+        if(binetteActive) binette.afficher(&fenetre);
         fenetre.display();
 
     }

@@ -33,6 +33,19 @@ int main()
             		case Keyboard::B:
             			binetteActive = true;
             		break;
+            		case Keyboard::Up:
+            		case Keyboard::E:
+            			//binette.sauter();
+            		break;
+            		case Keyboard::Right:
+            		case Keyboard::F:
+            			//binette.deplacer(+1);
+            		break;
+            		case Keyboard::Left:
+            		case Keyboard::S:
+            			//binette.deplacer(-1);
+            		break;
+            		default:
             	}
             }
             if(evenement.type == Event::KeyReleased)
@@ -42,6 +55,7 @@ int main()
             		case Keyboard::B:
             			binetteActive = false;
             		break;
+            		default:
             	}
             }
         }

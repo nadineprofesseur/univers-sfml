@@ -7,8 +7,6 @@
 
 #include "Binette.h"
 
-namespace MondeMagique {
-
 Binette::Binette() {
 
     const float rayon = 50.0f;
@@ -38,4 +36,11 @@ Binette::~Binette() {
     delete visage; delete oeilDroit; delete oeilGauche; delete bouche;
 }
 
-} /* namespace MondeMagique */
+void Binette::afficher(RenderWindow* fenetre)
+{
+	fenetre->draw(*visage);
+	fenetre->draw(*oeilDroit);
+	fenetre->draw(*oeilGauche);
+	fenetre->draw(*bouche);
+}
+

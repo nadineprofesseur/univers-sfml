@@ -10,8 +10,6 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
-namespace MondeMagique {
-
 class Binette {
 
 protected:
@@ -22,8 +20,7 @@ protected:
 public:
 	Binette();
 	virtual ~Binette();
+	void afficher(RenderWindow*);
 };
-
-} /* namespace MondeMagique */
 
 #endif /* BINETTE_H_ */

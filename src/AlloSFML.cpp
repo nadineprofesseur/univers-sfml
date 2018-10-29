@@ -9,6 +9,7 @@
 #define LARGEUR 800
 #define HAUTEUR 600
 #include <SFML/Graphics.hpp>
+#include "Binette.h"
 using namespace sf;
 int main()
 {
@@ -17,6 +18,7 @@ int main()
 
     RenderWindow fenetre(VideoMode(LARGEUR, HAUTEUR), "SFML !");
     Event evenement;
+    Binette binette;
 
     while (fenetre.isOpen())
     {
@@ -28,11 +30,7 @@ int main()
                 fenetre.close();
         }
 
-        //fenetre.draw(*visage);
-        //fenetre.draw(*oeilDroit);
-        //fenetre.draw(*oeilGauche);
-        //fenetre.draw(*bouche);
-
+        binette.afficher(&fenetre);
         fenetre.display();
 
     }

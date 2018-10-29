@@ -24,22 +24,26 @@ int main()
                 fenetre.close();
         }
 
+        float rayon = 25.0f;
+        float deplacementX = 50.0f;
+        float deplacementY = 50.0f;
+
         // https://www.sfml-dev.org/documentation/2.5.0/classsf_1_1CircleShape.php
-        CircleShape* visage = new CircleShape(50.0f);
+        CircleShape* visage = new CircleShape(2*rayon);
         (*visage).setFillColor(Color::Yellow);
         visage->setFillColor(Color::Yellow);
-        visage->setPosition(20,20);
+        visage->setPosition(0,0);
         CircleShape* oeilDroit = new CircleShape(10.0f);
         oeilDroit->setFillColor(Color::Green);
-        oeilDroit->setPosition(80,40);
+        oeilDroit->setPosition(60,20);
         CircleShape* oeilGauche = new CircleShape(10.0f);
         oeilGauche->setFillColor(Color::Green);
-        oeilGauche->setPosition(40,40);
+        oeilGauche->setPosition(20,20);
 
         // https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1RectangleShape.php
         RectangleShape* bouche = new RectangleShape(Vector2f(70,5));
         bouche->setFillColor(Color::Red);
-        bouche->setPosition(35,80);
+        bouche->setPosition(15,60);
 
         fenetre.draw(*visage);
         fenetre.draw(*oeilDroit);

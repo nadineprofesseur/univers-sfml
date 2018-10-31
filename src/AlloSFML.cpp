@@ -24,6 +24,7 @@ int main()
 
         while (fenetre.pollEvent(evenement))
         {
+        	char lettre;
             if (evenement.type == Event::Closed)
                 fenetre.close();
             if(evenement.type == Event::KeyPressed)
@@ -32,20 +33,25 @@ int main()
             	{
             		case Keyboard::B:
             			binetteActive = true;
+            			lettre = 'b';
             		break;
             		case Keyboard::Up:
             		case Keyboard::E:
             			//binette.sauter();
+            			lettre = 'e';
             		break;
             		case Keyboard::Right:
             		case Keyboard::F:
             			//binette.deplacer(+1);
+            			lettre = 'f';
             		break;
             		case Keyboard::Left:
             		case Keyboard::S:
             			//binette.deplacer(-1);
+            			lettre = 's';
             		break;
             		default:
+            			break;
             	}
             }
             if(evenement.type == Event::KeyReleased)
@@ -56,6 +62,7 @@ int main()
             			binetteActive = false;
             		break;
             		default:
+            		break;
             	}
             }
         }

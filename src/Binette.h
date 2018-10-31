@@ -17,10 +17,12 @@ protected:
     CircleShape* oeilDroit;
     CircleShape* oeilGauche;
     RectangleShape* bouche;
+    float rayon = 10;
 public:
 	Binette();
 	virtual ~Binette();
 	void afficher(RenderWindow*);
+	void sauter(float hauteurPlafond);
 };
 
 #endif /* BINETTE_H_ */

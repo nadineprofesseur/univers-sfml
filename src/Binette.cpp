@@ -9,7 +9,7 @@
 
 Binette::Binette() {
 
-    const float rayon = 50.0f;
+    this->rayon = 50.0f;
     const float positionX = 100.0f;
     const float positionY = 100.0f;
 
@@ -42,5 +42,17 @@ void Binette::afficher(RenderWindow* fenetre)
 	fenetre->draw(*oeilDroit);
 	fenetre->draw(*oeilGauche);
 	fenetre->draw(*bouche);
+}
+
+void Binette::sauter(float hauteurPlafond)
+{
+	// calculs à l'interne
+	float hauteurFinale; // variable créée dans la boucle
+	float tailleDuRebond; // variable créée dans la boucle
+	hauteurFinale = hauteurPlafond - 2*this->rayon;
+	tailleDuRebond = hauteurFinale / 3;
+	// int * tailleDuRebond = new int; // probleme de fuite de memoire
+	// calculs
+	// action
 }
 

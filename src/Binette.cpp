@@ -47,8 +47,8 @@ void Binette::afficher(RenderWindow* fenetre)
 void Binette::sauter(float hauteurPlafond)
 {
 	// calculs à l'interne
-	float hauteurFinale; // variable créée dans la boucle
-	float tailleDuRebond; // variable créée dans la boucle
+	static float hauteurFinale; // variable créée dans la boucle
+	static float tailleDuRebond; // variable créée dans la boucle
 	hauteurFinale = hauteurPlafond - 2*this->rayon;
 	tailleDuRebond = hauteurFinale / 3;
 	// int * tailleDuRebond = new int; // probleme de fuite de memoire

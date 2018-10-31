@@ -17,6 +17,7 @@ int main()
     Event evenement;
     Binette binette;
     bool binetteActive = false;
+	char lettre; // sortie seulement pour l'optimisation
 
     while (fenetre.isOpen())
     {
@@ -24,7 +25,6 @@ int main()
 
         while (fenetre.pollEvent(evenement))
         {
-        	char lettre;
             if (evenement.type == Event::Closed)
                 fenetre.close();
             if(evenement.type == Event::KeyPressed)
